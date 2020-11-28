@@ -3,4 +3,4 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-[Mesto Yandex Cloud](http://ilyazhulanov.students.nomoreparties.xyz/)
+[Mesto Yandex Cloud](http://ilyazhulanov.students.nomoredomains.rocks/)
