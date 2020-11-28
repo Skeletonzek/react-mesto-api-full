@@ -1,0 +1,16 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/font.css);
+@import url(./blocks/page/page.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/sign/sign.css);
+@import url(./blocks/sign-up/sign-up.css);
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup-tooltip/popup-tooltip.css);
+@import url(./blocks/popup-pic/popup-pic.css);
+@import url(./blocks/popup/_opened/popup_opened.css);
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile-info/profile-info.css);
+@import url(./blocks/places/places.css);
+@import url(./blocks/place/place.css);
+@import url(./blocks/place/__like-button/_active/place__like-button_active.css);
+@import url(./blocks/footer/footer.css);

@@ -1,0 +1,21 @@
+@import url(./__bin/place__bin.css);
+@import url(./__bin/_hidden/place__bin_hidden.css);
+@import url(./__photo/place__photo.css);
+@import url(./__title/place__title.css);
+@import url(./__like/place__like.css);
+@import url(./__like-button/place__like-button.css);
+@import url(./__like-count/place__like-count.css);
+
+
+.place {
+  position: relative;
+  width: 282px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}

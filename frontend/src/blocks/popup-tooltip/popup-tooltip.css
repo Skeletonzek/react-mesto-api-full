@@ -1,0 +1,15 @@
+@import url(./__form/popup-tooltip__form.css);
+@import url(./__close/popup-tooltip__close.css);
+@import url(./__status-img/popup-tooltip__status-img.css);
+@import url(./__status-text/popup-tooltip__status-text.css);
+
+.popup-tooltip {
+  height: 65%;
+  min-height: 680px;
+}
+
+@media screen and (max-width: 509px) {
+  .popup-tooltip {
+    height: 50%;
+  }
+}

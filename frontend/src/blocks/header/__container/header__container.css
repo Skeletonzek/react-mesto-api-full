@@ -1,0 +1,6 @@
+.header__container {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  margin-top: 6px;
+}

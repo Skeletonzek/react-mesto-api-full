@@ -1,0 +1,10 @@
+.sign-up__enter {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sign-up__enter:hover {
+  opacity: .6;
+  cursor: pointer;
+  transition: opacity .5s linear;
+}

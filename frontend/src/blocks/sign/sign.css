@@ -1,0 +1,11 @@
+@import url(./__form/sign__form.css);
+@import url(./__title/sign__title.css);
+@import url(./__text/sign__text.css);
+@import url(./__submit/sign__submit.css);
+
+.sign {
+  display: block;
+  max-width: 1280px;
+  width: 100%;
+  height: fit-content;
+}

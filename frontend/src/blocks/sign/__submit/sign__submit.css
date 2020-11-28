@@ -1,0 +1,31 @@
+.sign__submit {
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 2px;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.22;
+  text-align: center;
+  color: #000;
+}
+
+.sign__submit:active {
+  transform: scale(.9, .9);
+}
+
+.sign__submit:hover {
+  opacity: .8;
+  cursor: pointer;
+  transition: opacity .5s linear;
+}
+
+@media screen and (max-width:509px) {
+  .sign__submit {
+    height: 46px;
+    font-size:  16px;
+  }
+}

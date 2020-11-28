@@ -1,0 +1,8 @@
+.place__photo {
+  width: 282px;
+  height: 282px;
+}
+
+.place__photo:hover {
+  cursor: pointer;
+}

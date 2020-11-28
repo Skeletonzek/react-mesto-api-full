@@ -1,0 +1,26 @@
+.place__bin {
+  position: absolute;
+  width: 18px;
+  height: 19.3px;
+  top: 18px;
+  right: 15px;
+  z-index: 1;
+  background-image: url(../../../images/bin.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.place__bin:active {
+  transform: scale(.8, .8);
+}
+
+.place__bin:hover {
+  opacity: .6;
+  cursor: pointer;
+  transition: opacity .5s linear;
+}

@@ -1,0 +1,6 @@
+@media screen and (max-width: 509px) {
+  .popup-tooltip__form {
+    width: 87.5%;
+    left: 6.25%;
+  }
+}

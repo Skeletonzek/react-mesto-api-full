@@ -1,0 +1,18 @@
+.sign-up__alrdy-user {
+  width: 100%;
+  margin: 15px 0 0;
+  padding: 0;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #fff;
+  text-align: center;
+}
+
+@media screen and (max-width: 509px) {
+  .sign-up__alrdy-user {
+    margin-top: 20px;
+  }
+}

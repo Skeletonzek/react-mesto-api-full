@@ -1,0 +1,65 @@
+.sign__text {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  padding: 0 0 13px 0;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.21;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-bottom: 2px solid #ccc;
+}
+
+.sign__text:last-of-type {
+  margin-bottom: 216px;
+}
+
+.sign__text:focus {
+  outline: none;
+}
+
+.sign__text::placeholder {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #ccc;
+}
+
+.sign__text::-webkit-input-placeholder {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #ccc;
+}
+
+.sign__text::-moz-placeholder {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #ccc;
+}
+
+.sign__text::-ms-input-placeholder {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #ccc;
+}
+
+@media screen and (max-width: 509px) {
+  .sign__text:last-of-type {
+    margin-bottom: 173px;
+  }
+}
