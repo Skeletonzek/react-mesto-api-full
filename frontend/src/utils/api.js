@@ -33,7 +33,6 @@ export const getUserInfo = () => {
 }
 
 export const sendUserInfo = (data) => {
-  console.log(localStorage.getItem('jwt'));
   return fetch(`${BASE_URL}/users/me`, {
     method: 'PATCH',
     headers: {
