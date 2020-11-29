@@ -4,3 +4,4 @@
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
 [Mesto Yandex Cloud](http://ilyazhulanov.students.nomoredomains.rocks/)
+[Mesto Yandex Cloud API](http://api.ilyazhulanov.students.nomoredomains.rocks/)

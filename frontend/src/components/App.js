@@ -50,7 +50,7 @@ function App() {
         console.log(err);
       });
   }, []);
-  
+
   function loggedStatusYes(email) {
     setLogged(true);
     setEmail(email);
@@ -71,7 +71,7 @@ function App() {
   function handleAddPlaceClick() {
     setAddPlacePopupOpen(true);
   }
-  
+
   function handleTooltip(status) {
     setTooltipOpen(true);
     setTooltipStatus(status);
@@ -87,7 +87,7 @@ function App() {
   function closeAllPopups() {
     setEditAvatarPopupOpen(false);
     setAddPlacePopupOpen(false);
-    setEditProfilePopupOpen(false);    
+    setEditProfilePopupOpen(false);
     setSelectedCard({ ...selectedCard, open: false });
   }
 
@@ -145,7 +145,7 @@ function App() {
 
   function handleCardDelete(id) {
     api.deleteCard(id).then(() => {
-      
+
       const newCards = cards.filter((c) => c._id !== id);
       setCards(newCards);
     })
@@ -166,48 +166,48 @@ function App() {
 
   function handleRegister(password, email) {
     register(password, email)
-    .then((res) => {
-      if (res) {
-        handleTooltip(true);          
-      }
-    })
-    .catch((err) => {
-      handleTooltip(false); 
-      console.error(`${err} - некорректно заполнено одно из полей`); 
-    })
+      .then((res) => {
+        if (res) {
+          handleTooltip(true);
+        }
+      })
+      .catch((err) => {
+        handleTooltip(false);
+        console.error(`${err} - некорректно заполнено одно из полей`);
+      })
   }
 
   function handleLogin(password, email) {
     authorize(password, email)
-    .then((res) => {
-      if (res) {
-        loggedStatusYes(email);
-        api.getInitialCards()
-        .then((res) => {
-          setCards(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-        api.getUserInfo()
-        .then((res) => {
-          setCurrentUser(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-        history.push('/');
-      }
-    })
-    .catch((err) => {
-      handleTooltip(false);
-      if (err === 400) {
-        console.error(`${err} - не передано одно из полей`);
-      }
-      else {
-        console.error(`${err} - пользователь с email не найден`);
-      }
-    })
+      .then((res) => {
+        if (res) {
+          loggedStatusYes(email);
+          api.getInitialCards()
+            .then((res) => {
+              setCards(res);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+          api.getUserInfo()
+            .then((res) => {
+              setCurrentUser(res);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+          history.push('/');
+        }
+      })
+      .catch((err) => {
+        handleTooltip(false);
+        if (err === 400) {
+          console.error(`${err} - не передано одно из полей`);
+        }
+        else {
+          console.error(`${err} - пользователь с email не найден`);
+        }
+      })
   }
 
   function handleSignOut() {
@@ -218,20 +218,22 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
-        <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onSubmit={handleUpdateUser} />
-        <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} onSubmit={handleAddPlaceSubmit} />
-        <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onSubmit={handleUpdateAvatar} />
-        <ImagePopup card={selectedCard} onClose={closeAllPopups} />
-        <InfoTooltip isOpen={isTooltipOpen} onClose={handleTooltipClose} tooltipStatus={tooltipStatus} />
-        <Header isLogged={loggedIn} email={email} onSignOut={handleSignOut}/>
-        <ProtectedRoute path="/" loggedIn={loggedIn} component={Main} cards={cards} onCardLike={handleCardLike} onCardDelete={handleCardDelete} onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick} onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick} />
-        <Route path="/sign-up"> 
-          <Register onRegister={handleRegister} />
-        </Route>
-        <Route path="/sign-in">
-          <Login onLogin={handleLogin} />
-        </Route>
-        <Footer />
+        <div className="page__container">
+          <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onSubmit={handleUpdateUser} />
+          <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} onSubmit={handleAddPlaceSubmit} />
+          <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onSubmit={handleUpdateAvatar} />
+          <ImagePopup card={selectedCard} onClose={closeAllPopups} />
+          <InfoTooltip isOpen={isTooltipOpen} onClose={handleTooltipClose} tooltipStatus={tooltipStatus} />
+          <Header isLogged={loggedIn} email={email} onSignOut={handleSignOut} />
+          <ProtectedRoute path="/" loggedIn={loggedIn} component={Main} cards={cards} onCardLike={handleCardLike} onCardDelete={handleCardDelete} onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick} onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick} />
+          <Route path="/sign-up">
+            <Register onRegister={handleRegister} />
+          </Route>
+          <Route path="/sign-in">
+            <Login onLogin={handleLogin} />
+          </Route>
+          <Footer />
+        </div>
       </div>
     </CurrentUserContext.Provider>
   );

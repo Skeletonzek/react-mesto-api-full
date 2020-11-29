@@ -76,8 +76,8 @@ module.exports.createUser = (req, res, next) => {
       },
     }))
     .catch(() => {
-      const error = new Error('Переданы некорректные данные');
-      error.statusCode = 400;
+      const error = new Error('Конфликт почты');
+      error.statusCode = 409;
       next(error);
     });
 };

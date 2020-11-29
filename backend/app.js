@@ -34,13 +34,13 @@ app.get('/crash-test', () => {
 
 app.post('/signin', celebrate({
   body: Joi.object().keys({
-    email: Joi.string().required().min(2).max(40),
+    email: Joi.string().max(200).email().required(),
     password: Joi.string().required().min(2).max(200),
   }),
 }), login);
 app.post('/signup', celebrate({
   body: Joi.object().keys({
-    email: Joi.string().required().min(2).max(40),
+    email: Joi.string().max(200).email().required(),
     password: Joi.string().required().min(2).max(200),
   }),
 }), createUser);
@@ -49,8 +49,10 @@ app.use('/', auth);
 
 app.use('/', userRouter);
 app.use('/', cardRouter);
-app.use('/', (req, res) => {
-  res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });
+app.use('/', (req, res, next) => {
+  const error = new Error('Запрашиваемый ресурс не найден');
+  error.statusCode = 404;
+  next(error);
 });
 
 app.use(errorLogger);
@@ -61,6 +63,8 @@ app.use((err, req, res, next) => {
   const { statusCode = 500, message } = err;
 
   res.status(statusCode).send({ message: statusCode === 500 ? 'На сервере произошла ошибка' : message });
+
+  next();
 });
 
 app.listen(PORT);
